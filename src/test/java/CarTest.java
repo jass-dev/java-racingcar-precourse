@@ -1,5 +1,4 @@
-import Model.Car;
-import org.assertj.core.api.ThrowableAssert;
+import model.Car;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

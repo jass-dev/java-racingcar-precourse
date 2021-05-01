@@ -1,4 +1,4 @@
-import Model.Car;
+import model.Car;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
