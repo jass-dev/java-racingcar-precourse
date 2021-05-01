@@ -1,9 +1,9 @@
-package Model;
+package model;
 
 import util.ValidationUtil;
 
 public class Car {
-    private String name;
+    private final String name;
 
     public Car(String name) {
         ValidationUtil.isCarNameValid(name);
@@ -13,5 +13,4 @@ public class Car {
     public String getName() {
         return name;
     }
-
 }

@@ -1,11 +1,11 @@
-package Model;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cars {
+    private final static String SPLIT_STRING = ",";
     private List<Car> carList;
-    private final String SPLIT_STRING = ",";
 
     public Cars(String carsInput) {
         try {
@@ -30,4 +30,5 @@ public class Cars {
     public List<Car> getCarList() {
         return carList;
     }
+
 }
