@@ -5,13 +5,18 @@ import java.util.List;
 
 public class Cars {
     private List<Car> carList;
+    private final String SPLIT_STRING = ",";
 
     public Cars(String carsInput) {
-        this.carList = createCarList(splitCars(carsInput));
+        try {
+            this.carList = createCarList(splitCars(carsInput));
+        } catch (IllegalArgumentException e) {
+            System.out.println(Message.INVALID_INPUT.getMessage());
+        }
     }
 
     private String[] splitCars(String carsInput) {
-        return carsInput.split(",");
+        return carsInput.split(SPLIT_STRING);
     }
 
     private List<Car> createCarList(String[] carsInputArray) {
