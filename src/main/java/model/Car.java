@@ -1,7 +1,6 @@
 package model;
 
 import util.ValidationUtil;
-
 import java.util.List;
 
 public class Car {
@@ -14,6 +13,18 @@ public class Car {
         this.name = name;
     }
 
+    public void carGoForward(boolean carGoOrStop) {
+        if (carGoOrStop) {
+            setRaceDist(getRaceDist() + forwardInterval);
+        }
+    }
+
+    public void winnerListAdd(int max, List<Car> tempCarList) {
+        if (getRaceDist() == max) {
+            tempCarList.add(this);
+        }
+    }
+
     public String getName() {
         return name;
     }
@@ -24,17 +35,5 @@ public class Car {
 
     public void setRaceDist(int raceDist) {
         this.raceDist = raceDist;
-    }
-
-    public void carGoForward(boolean carGoOrStop) {
-        if(carGoOrStop){
-            setRaceDist(getRaceDist()+forwardInterval);
-        }
-    }
-
-    public void winnerListAdd(int max, List<Car> tempCarList) {
-        if (getRaceDist()==max){
-            tempCarList.add(this);
-        }
     }
 }

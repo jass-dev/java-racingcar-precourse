@@ -7,11 +7,10 @@ import java.util.List;
 
 public class Cars {
     private final static String SPLIT_STRING = ",";
-    private List<Car> carList;
+    private final List<Car> carList;
 
     public Cars(String carsInput) {
         this.carList = createCarList(splitCars(carsInput));
-
     }
 
     private String[] splitCars(String carsInput) {
@@ -26,10 +25,6 @@ public class Cars {
         return tempCarList;
     }
 
-    public List<Car> getCarList() {
-        return carList;
-    }
-
     public void carsRaceProceed() {
         for (Car car : getCarList()) {
             car.carGoForward(ValidationUtil.carGoOrStop());
@@ -39,7 +34,7 @@ public class Cars {
     public int getMaxDist() {
         int max = 0;
         for (Car car : getCarList()) {
-            max = Math.max( car.getRaceDist() ,max);
+            max = Math.max(car.getRaceDist(), max);
         }
         return max;
     }
@@ -51,5 +46,9 @@ public class Cars {
             car.winnerListAdd(max, tempCarList);
         }
         return tempCarList;
+    }
+    
+    public List<Car> getCarList() {
+        return carList;
     }
 }
